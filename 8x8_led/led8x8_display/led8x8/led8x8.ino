@@ -57,8 +57,10 @@ void setup() {
   Serial.begin(9600);
   Wire.begin();
   Wire.beginTransmission(0x70);
-  Wire.write(0x81);
   Wire.write(0x21);
+  Wire.endTransmission();
+  Wire.beginTransmission(0x70);
+  Wire.write(0x81);
   Wire.endTransmission();
   clear();
 }
